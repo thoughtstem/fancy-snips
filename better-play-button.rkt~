@@ -1,0 +1,19 @@
+#lang racket
+
+(require racket/class
+         (only-in racket/draw make-bitmap bitmap-dc%)
+         2htdp/image
+         (only-in mrlib/image-core render-image))
+
+(define (image->bitmap image dc)
+  (let* ([width (image-width image)]
+         [height (image-height image)]
+         [bm (make-bitmap width height)]
+         #;[dc (make-object bitmap-dc% bm)])
+    ;(send dc clear)
+    (render-image image dc 0 0)
+    ;bm
+    
+    ))
+
+(image->bitmap (circle 20 "solid" "red"))

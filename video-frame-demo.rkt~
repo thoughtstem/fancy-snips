@@ -1,0 +1,16 @@
+#lang racket
+
+
+    (init-field [canvas (new canvas% [parent frame]
+                             [paint-callback
+                              (lambda (canvas dc)
+                                (image->bitmap (play-button "green") dc)
+                                (send dc draw-text msg 5 1))])])
+
+
+
+    (init-field [canvas-thread (thread
+                                (λ ()
+                                  (let loop ()
+                                    (update-canvas-animation)
+                                    (loop))))])

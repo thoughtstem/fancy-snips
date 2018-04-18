@@ -1,0 +1,25 @@
+#lang racket
+
+(require racket/gui)
+
+(define (play-button color dc )
+  (define red-brush (new brush% [color color]))
+  (define white-brush (new brush% [color "white"]))
+  (define no-pen (new pen% [style 'transparent]))
+  
+  (define triangle (new dc-path%))
+  (send triangle move-to 0 0)
+  (send triangle line-to 30 20)
+  (send triangle line-to 0 40)
+  (send triangle close)
+
+  (send dc set-brush red-brush)
+  (send dc draw-ellipse 0 0 100 100)
+                
+  (send dc set-brush white-brush)
+  (send dc set-pen no-pen)
+                
+  (send dc translate 40 30)
+  (send dc draw-path triangle)
+  (send dc translate -40 -30))
+

@@ -1,0 +1,1 @@
+("6.9" ("aa16eba36a0d2b531592060e12b2e86d5d14b1a3" . "511162c5cb054fb8440093b66ee5c69062c4554d") (collects #"2htdp" #"image.rkt") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"gui.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"video-snip" #"drawing-tester.rkt"))
